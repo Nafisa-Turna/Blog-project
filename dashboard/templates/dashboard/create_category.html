@@ -1,0 +1,59 @@
+{% extends 'dashboard/index.html'%}
+{% block main_content %}
+{% load static %}
+            <div class="container-fluid">
+                    <div class="row">
+                            <div class="col-md-8">
+                     <!-- Tabs -->
+                     <div class="card">
+                         
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <!-- <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Post list</span></a> </li> -->
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">CREATE</span></a> </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content tabcontent-border">
+
+                                <div class="tab-pane  p-20" id="profile" role="tabpanel"> 
+                                <div class="card">
+                                        <form class="form-horizontal" action="" method="POST">
+                                            {% csrf_token %}
+                                            <div class="card-body">
+                                                <h4 class="card-title">Create Category</h4>
+                                                <div class="form-group row">
+                                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Category Name</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" name="cate_name"  class="form-control" id="fname" placeholder="category name">
+                                                    </div>
+                                                </div>
+                                               
+                                                <div class="form-group row">
+                                                    <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Description</label>
+                                                    <div class="col-sm-9">
+                                                        <textarea class="form-control" name="cate_desc"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="border-top">
+                                                <div class="card-body">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>  
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+    
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        {% endblock main_content %} 
